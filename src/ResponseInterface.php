@@ -34,27 +34,27 @@ interface ResponseInterface
     /**
      * Execute the given callback if there was a server or client error.
      */
-    public function onError(callable $callback): self;
+    public function onError(callable $callback): static;
 
     /**
      * Throw an exception if a server or client error occurred.
      */
-    public function throw(): self;
+    public function throw(): static;
 
     /**
      * Throw an exception if a server or client error occurred and the given condition evaluates to true.
      */
-    public function throwIf($condition): self;
+    public function throwIf($condition): static;
 
     /**
      * Throw an exception if the response status code is a 4xx level code.
      */
-    public function throwIfClientError(): self;
+    public function throwIfClientError(): static;
 
     /**
      * Throw an exception if the response status code is a 5xx level code.
      */
-    public function throwIfServerError(): self;
+    public function throwIfServerError(): static;
 
 
     /**
