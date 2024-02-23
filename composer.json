@@ -1,0 +1,12 @@
+{
+    "name": "norman-huth/response",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NormanHuth\\Response\\": "src/"
+        }
+    }
+}
