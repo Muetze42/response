@@ -6,8 +6,6 @@ interface ResponseInterface
 {
     /**
      * Get the body of the response.
-     *
-     * @return string
      */
     public function body(): string;
 
@@ -55,10 +53,4 @@ interface ResponseInterface
      * Throw an exception if the response status code is a 5xx level code.
      */
     public function throwIfServerError(): static;
-
-
-    /**
-     * Get the body of the response.
-     */
-    public function __toString(): string;
 }

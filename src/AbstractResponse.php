@@ -23,4 +23,20 @@ abstract class AbstractResponse implements ResponseInterface
     {
         return value($condition, $this) ? $this->throw(func_get_args()[1] ?? null) : $this;
     }
+
+    /**
+     * Throw an exception if the response status code is a 4xx level code.
+     */
+    public function throwIfClientError(): static
+    {
+        return $this->clientError() ? $this->throw() : $this;
+    }
+
+    /**
+     * Throw an exception if the response status code is a 5xx level code.
+     */
+    public function throwIfServerError(): static
+    {
+        return $this->serverError() ? $this->throw() : $this;
+    }
 }
